@@ -60,11 +60,13 @@ class MenuButtonActions {
   }
 
   setFocusToMenuitem(newMenuitem) {
-    this.menuitemNodes.forEach(function (item) {
-// TOUFIC'S COMMENT: Placeholder for the roving tabindex logic  ;)
+    this.menuitemNodes.forEach((item) => {
+      item.setAttribute('tabindex', '-1'); 
     });
+     // TOUFIC'S COMMENT: Placeholder for the roving tabindex logic
+    newMenuitem.setAttribute('tabindex', '0'); 
+    newMenuitem.focus();
   }
-
   setFocusToFirstMenuitem() {
     this.setFocusToMenuitem(this.firstMenuitem);
   }
